@@ -1,20 +1,23 @@
-"use client";
+import Header from "@/components/header"
+import Footer from "@/components/footer"
+import Hero from "@/components/hero"
 
-import { useEffect, useState } from "react";
-
-export default function Home() {
-  const [mensaje, setMensaje] = useState("Cargando...");
-
-  useEffect(() => {
-    fetch("http://localhost:3000/api/saludo")
-      .then((res) => res.text())
-      .then((data) => setMensaje(data))
-      .catch(() => setMensaje("❌ Error conectando con Nest"));
-  }, []);
-
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-2xl font-bold">{mensaje}</h1>
-    </main>
-  );
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <Hero />
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">Bienvenido a tu sitio web</h2>
+            <p className="text-lg text-center text-muted-foreground">
+              Esta es una página base que puedes personalizar según tus necesidades.
+            </p>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  )
 }
