@@ -18,6 +18,9 @@ export default function Header() {
             <Link href="/contact" className="hover:text-primary transition-colors">
               Contacto
             </Link>
+            <Link href="/tasks" className="hover:text-primary transition-colors">
+              Prueba BD
+            </Link>
           </div>
         </nav>
       </div>
